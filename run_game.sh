@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 name="neotokyo"
 appid="313600"
 maxplayers="12"
-if [ $(docker volume ls -q | grep $name) == "" ] then
+if [ $(docker volume ls -q | grep $name) -eq "" ] then
   echo "no docker volume called " + $name + " found."
   exit 1
 fi
