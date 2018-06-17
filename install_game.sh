@@ -9,7 +9,7 @@ if [[ $(docker volume ls -q | grep $name) -eq "" ]]; then
 fi
 # Build the steamCMD image if it doesn't exist, so we have something to run steamcmd inside of.
 if [[ $(docker image ls -q | grep steamcmd) -eq "" ]]; then
-  docker build steamcmd
+  docker build --name steamcmd steamcmd
 fi
 # If building went well, let's install the game.
 if [[ $? -eq 0 ]]; then
