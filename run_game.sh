@@ -1,7 +1,7 @@
 #!/bin/bash
 
-name="neotokyo"
-appid="313600"
+game_name="neotokyo"
+$appid="313600"
 maxplayers="12"
 if [ $(docker volume ls -q | grep $name) -eq "" ] then
   echo "no docker volume called " + $name + " found."
