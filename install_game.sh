@@ -13,5 +13,5 @@ if [[ $(docker image ls -q | grep steamcmd) -eq "" ]]; then
 fi
 # If building went well, let's install the game.
 if [[ $? -eq 0 ]]; then
-  docker run -v $name:/game steamcmd /home/steam/steamcmd/steamcmd.sh @sSteamCmdForcePlatformType windows +login anonymous +force_install_dir /game +app_update $appid validate +quit
+  docker run --name steamcmd-game-installer -v $name:/game steamcmd /home/steam/steamcmd/steamcmd.sh @sSteamCmdForcePlatformType windows +login anonymous +force_install_dir /game +app_update $appid validate +quit
 fi

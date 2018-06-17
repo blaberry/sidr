@@ -20,7 +20,7 @@ RUN mkdir -p /home/steam/steamcmd  && \
     curl -s http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -v -C /home/steam/steamcmd -zx && \
     chown -R steam:steam /home/steam
 
-USER steam
+#USER steam
 
 ## Update steamcmd
 RUN /home/steam/steamcmd/steamcmd.sh +quit
