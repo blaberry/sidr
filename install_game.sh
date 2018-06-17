@@ -3,7 +3,7 @@
 name="neotokyo"
 appid="313600"
 
-if [ $(docker volume ls -q | grep $name) == "" ] then
+if [ $(docker volume ls -q | grep $name) -eq "" ] then
   docker volume create $name
 fi
 
