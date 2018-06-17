@@ -4,7 +4,7 @@ MAINTAINER Linn Engström <linn.engstroem@gmail.com>
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
 RUN apt-get -q update \
     && apt-get -q install -y software-properties-common python-software-properties \
-    && add-apt-repository -yq ppa:ubuntu-wine/ppa
+    && add-apt-repository -y ppa:ubuntu-wine/ppa
 
 RUN dpkg -q --add-architecture i386 \
     && apt-get -q update \
