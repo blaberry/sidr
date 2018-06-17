@@ -12,4 +12,4 @@ RUN dpkg --add-architecture i386 \
 RUN mkdir /opt/neotokyo /opt/work /opt/upper
 
 
-CMD ["mount -t overlayfs -o lower=/game,upper=/opt/upper,work=/opt/work overlayfs /opt/neotokyo"]
+ENTRYPOINT ["mount -t overlayfs -o lower=/game,upper=/opt/upper,work=/opt/work overlayfs /opt/neotokyo"]

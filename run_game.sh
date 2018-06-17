@@ -12,4 +12,4 @@ if [[ $(docker image ls -q | grep $name) -eq "" ]]; then
   docker build --tag $name $name
 fi
 
-docker run -P -v "$name":/game "$name" -w /opt/"$name" --name "$(curl -L 'https://uzby.com/api.php?min=4&max=9')" Xvfb :1 -screen 0 800x600x8 & export DISPLAY=:1 wine start srcds.exe -console -game NeotokyoSource -port 27015 +maxplayers "$maxplayers" +exec server.cfg +map nt_dawn_ctg
+docker run -P -v "$name":/game "$name" -w /opt/"$name" --name "$(curl -L 'https://uzby.com/api.php?min=4&max=9')" Xvfb :1 -screen 0 800x600x8 & export DISPLAY=:1; wine start srcds.exe -console -game NeotokyoSource -port 27015 +maxplayers "$maxplayers" +exec server.cfg +map nt_dawn_ctg
