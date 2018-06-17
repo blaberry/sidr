@@ -2,16 +2,16 @@ FROM ubuntu:xenial
 MAINTAINER Linn Engström <linn.engstroem@gmail.com>
 
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
-RUN apt-get -q update \
-    && apt-get -q install -y software-properties-common python-software-properties \
+RUN apt-get -qq update \
+    && apt-get -qq install -y software-properties-common python-software-properties \
     && add-apt-repository -y ppa:ubuntu-wine/ppa
 
-RUN dpkg -q --add-architecture i386 \
-    && apt-get -q update \
-    && apt-get -q install -y wine winetricks xvfb
+RUN dpkg -qq --add-architecture i386 \
+    && apt-get -qq update \
+    && apt-get -qq install -y wine winetricks xvfb
 
 ## SteamCMD
-RUN apt-get -q install --no-install-recommends -y \
+RUN apt-get -qq install --no-install-recommends -y \
     ca-certificates \
     lib32gcc1 \
     curl
